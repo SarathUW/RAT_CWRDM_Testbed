@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAT - Disclaimer</title>
+    <!-- Chart.js extension for plotting -->
+    <script src="https://cdn.plot.ly/plotly-2.25.2.min.js" charset="utf-8"></script>
+    <!-- Plotly plugin for plotting -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Leaflet CSS -->
+    <link href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Script -->
+    <script src="script_download.js"></script>
+
+    <style>
+        /* Set body and html to 100% height */
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Set the content to flex layout */
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Set the main content area to grow, pushing the footer to the bottom */
+        main {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-0">
+        <div class="container-fluid">
+        <a
+          class="navbar-brand py-0"
+          href="https://cwrdm.kerala.gov.in"
+          target="_blank"
+        >
+          <img
+            src="./assets/images/cwrdm_logo.png"
+            alt="Logo"
+            width="30"
+            height="30"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-text mt-2 ms-0 py-1">
+                <h5 class="dark text-white">Reservoir Assessment Tool  (<strong>RAT</strong><span class="text-warning"> 3.0</span>) - <strong>Kerala</strong></h5>
+            </div>
+            <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="download.html" target = "_blank">Data Download</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="documentation.html">Documentation</a>
+            </li>
+            
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+    <div class="container my-2 py-5" style="height: 100%;">
+        <h4>Disclaimer</h4>
+        <p style="text-align: justify";>The information provided by RAT 3.0 - Kerala is for general information purposes only. 
+            Users of RAT 3.0 - Kerala must familiarize themselves with the limitations of satellite 
+            remote sensing based observations and hydrological modeling. <strong> 
+                UNDER NO CIRCUMSTANCES SHALL WE (the developers of RAT 3.0 or their institutional affiliations) 
+                HAVE ANY LIABILITY TO YOU FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF WRONGFUL APPLICATION OR 
+                FAULTY DECISION MAKING BASED ON RESERVOIR OPERATION ESTIMATES BY RAT 3.0. YOUR USE OF THE SITE AND YOUR RELIANCE 
+                ON ANY INFORMATION ON THE SITE IS SOLELY AT YOUR OWN RISK.</strong></p>
+    </p>
+        
+    </div>
+
+    
+
+  <!-- Footer -->
+  <footer class="bg-light text-center py-1 pb-0 my-0">
+    
+    <div class="row my-0 py-0 d-flex justify-content-between">
+
+        <div class="col py-0 my-3 d-none d-md-block">
+            <div class="col py-0 my-2 d-none d-md-flex justify-content-center align-items-center">
+              <img src="./assets/images/nasaPartner_logo.png" alt="Footer Image 1" width="130">
+                
+              <!--  -->
+            </div>
+        </div>
+
+        <div class="col py-0 my-3 d-none d-md-block">
+            <div class="d-flex justify-content-center my-2">
+              <img src="./assets/images/kscste_logo.png" alt="Footer Image 2" width="80">  
+              
+            </div>
+        </div>
+
+        <div class="col py-0 my-3 d-none d-md-block">
+            <div class="d-flex justify-content-center">
+                <img src="./assets/images/cwrdm_logo.png" alt="Footer Image 3" width="90">
+            </div>
+        </div>
+
+        <div class="col py-0 my-5 d-none d-md-block">
+            <div class="d-flex justify-content-center">
+                <img src="./assets/images/University-of-Washington-Logo.png" alt="Footer Image 4" width="200">
+            </div>
+        </div>
+
+        <div class="col py-0 my-5 d-none d-md-block">
+            <div class="d-flex justify-content-center">
+                <img src="./assets/images/saswe_logo.png" alt="Footer Image 5" width="200">
+            </div>
+        </div>
+
+    </div>          
+    
+  <div class="row">
+    <div class="col-11">
+      <div class="text-dark text-center">
+        Maintained by <a class="text-primary" style="opacity: 1" href="https://cwrdm.kerala.gov.in/" target="_blank"> CWRDM</a> in collaboration with <a class="text-primary" style="opacity: 1" href="https://saswe.net/" target="_blank"> SASWE Labs</a>, <a class="text-primary" style="opacity: 1" href="https://www.washington.edu/" target="_blank"> University of Washington</a>
+    </div>
+    </div>
+    <div class="col-lg-1 col-md-3 col-sm-3">
+      <a class="text-dark" style="opacity: 1" href="disclaimer.html"> Disclaimer</a>
+    </div>
+  </div>       
+        
+</footer>
+    
+</body>
+</html>
+
+
+
+
+

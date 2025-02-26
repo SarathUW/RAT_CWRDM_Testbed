@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Download</title>
+    <!-- Chart.js extension for plotting -->
+    <script
+      src="https://cdn.plot.ly/plotly-2.25.2.min.js"
+      charset="utf-8"
+    ></script>
+    <!-- Plotly plugin for plotting -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Leaflet CSS -->
+    <link
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Script -->
+    <script src="script_download.js"></script>
+
+    <style>
+      /* Set body and html to 100% height */
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Set the content to flex layout */
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Set the main content area to grow, pushing the footer to the bottom */
+      main {
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-0">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand py-0"
+          href="https://cwrdm.kerala.gov.in"
+          target="_blank"
+        >
+          <img
+            src="./assets/images/cwrdm_logo.png"
+            alt="Logo"
+            width="30"
+            height="30"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="navbar-text mt-2 ms-0 py-1">
+            <h5 class="dark text-white">
+              Reservoir Assessment Tool (<strong>RAT</strong
+              ><span class="text-warning"> 3.0</span>) - <strong>Kerala</strong>
+            </h5>
+          </div>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="download.html" target="_blank"
+                >Data Download</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="documentation.html">Documentation</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-2 py-5" style="height: 100%">
+      <h4>Data Download Options</h4>
+      <p>
+        Please select the dam you want to download the data for, followed by the
+        type of data.
+      </p>
+      <form id="downloadForm">
+        <div class="mb-3">
+          <label for="damDropdown" class="form-label">Select Dam:</label>
+          <select class="form-select" id="damDropdown" name="damName"></select>
+        </div>
+        <div class="mb-3">
+          <label for="dataOption" class="form-label">Select Data Option:</label>
+          <select class="form-select" id="dataOption" name="dataOption">
+            <option value="inflow">Inflow</option>
+            <option value="outflow">Outflow</option>
+            <option value="sa">Surface Area</option>
+            <option value="delS">Storage Change</option>
+            <option value="aec">Area-Elevation Curve</option>
+            <option value="evaporation">Evaporation</option>
+          </select>
+        </div>
+        <button id="downloadButton" class="btn btn-success">
+          Download Data
+        </button>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-1 pb-0 my-0">
+      <div class="row my-0 py-0 d-flex justify-content-between">
+        <div class="col py-0 my-3 d-none d-md-block">
+          <div
+            class="col py-0 my-2 d-none d-md-flex justify-content-center align-items-center"
+          >
+            <img
+              src="./assets/images/nasaPartner_logo.png"
+              alt="Footer Image 1"
+              width="130"
+            />
+
+            <!--  -->
+          </div>
+        </div>
+
+        <div class="col py-0 my-3 d-none d-md-block">
+          <div class="d-flex justify-content-center my-2">
+            <img
+              src="./assets/images/kscste_logo.png"
+              alt="Footer Image 2"
+              width="80"
+            />
+          </div>
+        </div>
+
+        <div class="col py-0 my-3 d-none d-md-block">
+          <div class="d-flex justify-content-center">
+            <img
+              src="./assets/images/cwrdm_logo.png"
+              alt="Footer Image 3"
+              width="90"
+            />
+          </div>
+        </div>
+
+        <div class="col py-0 my-5 d-none d-md-block">
+          <div class="d-flex justify-content-center">
+            <img
+              src="./assets/images/University-of-Washington-Logo.png"
+              alt="Footer Image 4"
+              width="200"
+            />
+          </div>
+        </div>
+
+        <div class="col py-0 my-5 d-none d-md-block">
+          <div class="d-flex justify-content-center">
+            <img
+              src="./assets/images/saswe_logo.png"
+              alt="Footer Image 5"
+              width="200"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-11">
+          <div class="text-dark text-center">
+            Maintained by
+            <a
+              class="text-primary"
+              style="opacity: 1"
+              href="https://cwrdm.kerala.gov.in/"
+              target="_blank"
+            >
+              CWRDM</a
+            >
+            in collaboration with
+            <a
+              class="text-primary"
+              style="opacity: 1"
+              href="https://saswe.net/"
+              target="_blank"
+            >
+              SASWE Labs</a
+            >,
+            <a
+              class="text-primary"
+              style="opacity: 1"
+              href="https://www.washington.edu/"
+              target="_blank"
+            >
+              University of Washington</a
+            >
+          </div>
+        </div>
+        <div class="col-lg-1 col-md-3 col-sm-3">
+          <a class="text-dark" style="opacity: 1" href="disclaimer.html"
+            >Disclaimer</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

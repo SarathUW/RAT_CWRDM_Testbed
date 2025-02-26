@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Reservoir Assessment Tool (RAT) 2.0 - Mekong</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        
+        <!--jQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
+
+        <!-- Local css-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/rat_custom.css" rel="stylesheet" />
+    </head>
+
+    <body class="sb-nav-fixed">
+    <div class="'outer">
+        <div class="top">
+            <nav class="sb-topnav navbar navbar-expand justify-content-between navbar-dark bg-dark">
+                <!-- Navbar Brand-->
+                <a class="navbar-brand ps-3" href="index.html">Reservoir Assessment Tool (<b><span class="text-light">RAT</span></b>) <span class="text-info">2.0</span> - <b>Mekong</b></a>  <!-- TODO: Rickroll pixel-->
+                <!-- Navbar-->
+                <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-bars fa-fw"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="index.html">Home</a></li>
+                            <li><a class="dropdown-item" href="about.html">About RAT</a></li>
+                            <li><a class="dropdown-item" href="howtouse.html">How to use RAT</a></li>
+                            <li><a class="dropdown-item" href="howtocite.html">How to cite RAT</a></li>
+                            <li><a class="dropdown-item" href="acknowledgements.html">Acknowledgements</a></li>
+                            <li><a class="dropdown-item" href="disclaimer.html">Disclaimer</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><a class="dropdown-item" href="https://saswe.net">SASWE Homepage</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="below">
+            <!-- Main Content -->
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid full bg-dark vh-100-ft spacer">
+                    <p class="text-white"><span class="fs-1 h1_custom">Disclaimer</span></p>
+                    <!-- </header> -->
+                    <p class="text-light px_custom">
+                        The information provided by RAT 2.0 - Mekong is for general information purposes only. Users of RAT 2.0 - Mekong must familiarize themselves with the limitations of satellite remote sensing based observations and hydrological modeling (refer to key documentation listed in <a href="howtocite.html" target="_blank">How to Cite</a>). <strong> UNDER NO CIRCUMSTANCES SHALL WE (the developers of RAT 2.0 or their institutional affiliations) HAVE ANY LIABILITY TO YOU FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF WRONGFUL APPLICATION OR FAULTY DECISION MAKING BASED ON RESERVOIR OPERATION ESTIMATES BY RAT 2.0. YOUR USE OF THE SITE AND YOUR RELIANCE ON ANY INFORMATION ON THE SITE IS SOLELY AT YOUR OWN RISK.</strong></p>
+                    </div>
+                </main>
+            </div>
+
+                <footer class="py-3 bg-dark mt-auto fixed-footer">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between center">
+                            <div class="text-muted">Copyright &copy 2022 ; Developed by <a class="text-white" style="opacity:0.6" href="https://www.linkedin.com/in/pritamd47" target="_blank">Pritam Das </a> of <a class="text-white" style="opacity:0.6" href="http://www.saswe.net" target="_blank">SASWE Research Group</a>, <font color="#858585"><a class="text-white" style="opacity:0.6" href="http://www.washington.edu/" target="_blank">University of Washington</a></font></div>
+                            <div>
+                                <a class="text-white" style="opacity:0.6" href="disclaimer.html">Disclaimer</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.map-container {
+flex-grow: 1;
+height: 100%;
+}
+
+.toggle-box h6 {
+margin: 0; 
+padding: 0;
+}
+  
+.inline-link {
+display: inline;
+margin: 0;
+padding: 0;
+}
+
+.custom-offcanvas-size {
+max-width: 100%; 
+
+--bs-offcanvas-height: 70vh !important; 
+}
+  
+
+
+/* Colorbar styling for precipitation */
+.color-bar-legend {
+    position: fixed;
+    top: 130px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.0);
+    border-radius: 10px;
+    padding: 5px;
+    z-index: 1000;
+  }
+  
+  .legend-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .legend-color-bar {
+    width: 20px;
+    height: 150px;
+    background-image: linear-gradient(to bottom, rgba(128, 0, 128, 1), rgba(128, 0, 128, 0));
+    border-radius: 4px;
+  }
+  
+  .legend-labels {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+  }
+  
+  .legend-labels span {
+    font-size: 12px;
+    color: purple;
+  }
+
+  .date-picker-container {
+    position: fixed;
+    top: 140px; /* Adjust the top position */
+    right: 10px; /* Adjust the right position */
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 5px;
+    z-index: 1000;
+ }
+
+ .date-picker-container input[type="date"] {
+  background-color: black; /* Set the background color to black */
+  border: none;
+  color: white; /* Set the text color to white */
+  padding: 4px;
+  border-radius: 5px;
+}
+
+/* Style the date picker icon */
+.date-picker-container input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Invert the colors to make it white */
+}

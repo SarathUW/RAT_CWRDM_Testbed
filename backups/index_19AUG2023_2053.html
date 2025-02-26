@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAT-Kerala</title>
+  <!-- Chart.js extension for plotting -->
+  <script src="https://cdn.plot.ly/plotly-2.25.2.min.js" charset="utf-8"></script>
+  <!-- Plotly plugin for plotting -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+  
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .map-container {
+      flex-grow: 1;
+      height: 100%;
+    }
+    
+    .inline-link {
+      display: inline;
+      margin: 0;
+      padding: 0;
+    }
+
+    .custom-offcanvas-size {
+      max-width: 100%; 
+      
+      --bs-offcanvas-height: 70vh !important; 
+    }
+    
+    
+  </style>
+</head>
+<body class="d-flex flex-column">
+  
+<!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-0">
+      <div class="container-fluid">
+        <a class="navbar-brand py-0" href="#">
+          <img src="./assets/images/RATLogo_white.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="navbar-text mt-2 ms-auto py-1"> <!-- Add classes for centering and text styling -->
+            <h5 class="dark text-white">Reservoir Assessment Tool (<strong>RAT</strong><span class="text-warning"> 3.0</span>) - <strong>Kerala</strong></h5>
+          </div>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="download.html" target = "_blank">Data Download</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#docs">Documentation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+
+
+  <!-- Map Area -->
+  <div class="map-container">
+    <div id="map" style="height: 100%;"></div>
+  </div>
+
+  <!-- Offcanvas Markup -->
+  <div class="offcanvas offcanvas-bottom custom-offcanvas-size" tabindex="-1" id="graphOffcanvas" aria-labelledby="graphOffcanvasLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="graphOffcanvasLabel"></h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" id ="offcanvasClosed"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="row py-0 my-0">
+        <div class="col d-flex justify-content-center">
+          <div class="btn-group d-grid gap-2 d-sm-flex" role="group" aria-label="Graph Options">
+            <input type="radio" class="btn-check" name="graphOptions" id="inflowRadio">
+            <label class="btn btn-outline-dark btn-sm" for="inflowRadio">Inflow</label>
+      
+            <input type="radio" class="btn-check" name="graphOptions" id="outflowRadio">
+            <label class="btn btn-outline-dark btn-sm" for="outflowRadio">Outflow</label>
+      
+            <input type="radio" class="btn-check" name="graphOptions" id="areaRadio">
+            <label class="btn btn-outline-dark btn-sm" for="areaRadio">Surface Area</label>
+      
+            <input type="radio" class="btn-check" name="graphOptions" id="temperatureRadio">
+            <label class="btn btn-outline-dark btn-sm" for="temperatureRadio">Temperature</label>
+      
+            <input type="radio" class="btn-check" name="graphOptions" id="delSRadio">
+            <label class="btn btn-outline-dark btn-sm" for="delSRadio">Storage Change</label>
+      
+            <input type="radio" class="btn-check" name="graphOptions" id="aecRadio">
+            <label class="btn btn-outline-dark btn-sm" for="aecRadio">Area-Elevation Curve</label>
+      
+            <input type="radio" class="btn-check" name="graphOptions" id="evapRadio">
+            <label class="btn btn-outline-dark btn-sm" for="evapRadio">Evaporation</label>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row py-0 my-0">
+        <div class="col">
+          <div id="graphCanvas"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <a href="download.html" target = "_blank" class="btn btn-outline-dark btn-sm mt-3">Download Data</a>
+        </div>
+      </div>
+    </div>
+  </div>
+       
+    
+
+  <!-- Footer -->
+  <footer class="bg-light text-center py-1 pb-0 my-0">
+    <div class="container pt-1 pb-1 my-0">
+      <div class="row my-0 py-0 d-flex justify-content-between">
+
+        <div class="col py-0 my-0 d-none d-md-block">
+          <div class="col py-0 my-2 d-none d-md-flex justify-content-center align-items-center">
+            <img src="./assets/images/University-of-Washington-Logo.png" alt="Footer Image 3" width="230">
+          </div>
+        </div>
+
+        <div class="col py-0 my-0 d-none d-md-block">
+          <div class="d-flex justify-content-center my-2"> 
+            <img src="./assets/images/saswe_logo.png" alt="Footer Image 1" width="200">
+          </div>
+        </div>
+
+        <div class="col py-0 my-0 d-none d-md-block">
+          <div class="d-flex justify-content-center"> 
+            <img src="./assets/images/nasaPartner_logo.png" alt="Footer Image 4" width="120">
+          </div>
+        </div>        
+       
+      </div>
+      <div class="row">
+        <p class="py-0 pb-0 my-0">
+          Developed by Sarath Suresh at <a href="https://saswe.net/" target="_blank" class="inline-link">SASWE Labs</a>, Department of Civil and Environmental Engineering, <a href="https://www.washington.edu/" target="_blank" class="inline-link">University Of Washington</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Leaflet JS -->
+  <!-- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+   integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+   crossorigin=""></script>
+  <script src="https://unpkg.com/@turf/turf@latest"></script>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+
+</body>
+</html>
